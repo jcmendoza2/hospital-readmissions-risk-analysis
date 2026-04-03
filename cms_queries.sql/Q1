@@ -1,0 +1,11 @@
+-- Q1: Which states have the worst readmission problem for each condition?
+-- Business Use: helps ops teams prioritize where to focus interventions
+SELECT state,
+		ROUND(AVG(excess_readmission_ratio), 4) AS avg_excess_ratio,
+		COUNT(DISTINCT facility_id) AS hospital_count
+FROM readmissions
+WHERE is_suppressed = 0
+GROUP BY state
+ORDER BY avg_excess_ratio DESC
+LIMIT 15;
+

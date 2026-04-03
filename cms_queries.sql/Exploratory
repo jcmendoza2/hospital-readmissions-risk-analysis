@@ -1,0 +1,14 @@
+-- gather data for full distribution picture
+
+SELECT MIN(excess_readmission_ratio) 			AS min_ratio,
+		MAX(excess_readmission_ratio)			AS max_ratio,
+		ROUND(AVG(excess_readmission_ratio), 4)	AS mean_ratio,
+		COUNT(*)								AS total_hospitals,
+		
+		-- What % of hospitals were penalized at all?
+		ROUND(100.0 * SUM(CASE WHEN excess_readmission_ratio > 1.0 THEN 1 ELSE 0 END) / COUNT(*), 1) AS pct_hospitals_penalized,
+		
+		-- What % of hospitals possess a very bad readmission ratio (above 1.09)
+		ROUND(100.0 * SUM(CASE WHEN excess_readmission_ratio > 1.09 THEN 1 ELSE 0 END) / COUNT(*), 1) AS pct_hospitals_highrisk
+FROM readmissions
+WHERE is_suppressed = 0;

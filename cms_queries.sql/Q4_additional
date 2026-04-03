@@ -1,0 +1,10 @@
+-- calculate hospitals where ratio > 1.0 divided by total hospitals
+
+SELECT condition,
+		COUNT(*) AS total_hospitals,
+		SUM(CASE WHEN excess_readmission_ratio > 1.0 THEN 1 ELSE 0 END) AS penalized,
+		ROUND(100.0 * SUM(CASE WHEN excess_readmission_ratio > 1.0 THEN 1 ELSE 0 END) / COUNT(*), 1) AS pct_penalized
+FROM readmissions
+WHERE is_suppressed = 0
+GROUP BY condition
+ORDER BY pct_penalized DESC;

@@ -1,0 +1,13 @@
+-- Q2: Which hospitals are high-volume and high excess readmissions (the highest financial risk)
+-- Business Use: CMS penalizes hospitals financially (who's most exposed)
+
+SELECT facility_name,
+		state,
+		condition,
+		num_discharges,
+		excess_readmission_ratio,
+		ROUND((excess_readmission_ratio - 1) * num_discharges, 1) AS estimated_excess_cases
+FROM readmissions
+WHERE is_suppressed = 0 AND num_discharges IS NOT NULL 
+ORDER BY estimated_excess_cases DESC 
+LIMIT 20;

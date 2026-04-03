@@ -1,0 +1,16 @@
+-- Q3: Hospital scorecard: how does a single hospital perform across all 6 conditions 
+-- Business Use: hospital administrator 
+
+SELECT facility_name,
+		state,
+		MAX(CASE WHEN condition = 'Heart Attack' 			THEN excess_readmission_ratio END) AS ami_ratio,
+		MAX(CASE WHEN condition = 'Heart Failure'			THEN excess_readmission_ratio END) AS hf_ratio,
+		MAX(CASE WHEN condition  = 'Pneumonia'				THEN excess_readmission_ratio END) AS pn_ratio,
+		MAX(CASE WHEN condition = 'COPD'					THEN excess_readmission_ratio END) AS copd_ratio,
+		MAX(CASE WHEN condition = 'Hip/Knee Replacement'	THEN excess_readmission_ratio END) AS hipknee_ratio,
+		MAX(CASE WHEN condition = 'Bypass Surgery'			THEN excess_readmission_ratio END) AS cabg_ratio,
+		ROUND(AVG(excess_readmission_ratio), 4) AS overall_avg 
+FROM readmissions
+WHERE is_suppressed = 0
+GROUP BY facility_id, facility_name, state 
+ORDER BY overall_avg DESC;

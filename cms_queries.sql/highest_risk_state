@@ -1,0 +1,9 @@
+-- find highest risk state 
+
+SELECT state,
+		ROUND(AVG(excess_readmission_ratio), 4) AS avg_ratio
+FROM readmissions
+WHERE is_suppressed = 0
+GROUP BY state 
+ORDER BY avg_ratio DESC 
+LIMIT 1;
