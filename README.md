@@ -1,9 +1,9 @@
-**<h1>Hospital Readmissions Risk Analysis</h1>**
+<h1>Hospital Readmissions Risk Analysis</h1>
 CMS Hospital Readmissions Reduction Program (HRRP) - July 2021 through Jun 2024
 
 --------------------------------------------------------------------------
 
-***<h2>Problem Statement:</h2>***
+<h2>Problem Statement:</h2>
 
 In October 2012, the Centers for Medicare and Medicaid Services (CMS) launched the Hospital Readmissions Reduction Program (HRRP) which is a federal initiative that financially penalizes hospitals with excess 30-day readmission rates across six conditions. The conditions reported on where: Heart Attack (AMI), Heart Failure (HF), Pneumonia, COPD, Hip/Knee Replacement (THA/TKA), and Coronary Artery Bypass Graft Surgery (CABG). 
 
