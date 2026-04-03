@@ -112,4 +112,4 @@ The interactive dashboard built in Power BI allows stakeholders to filter all fo
 | GitHub | Portfolio hosting and project documentation |
 
 --------------------------------------------------------------------------
-**Created by Jacqueline Mendoza - [linkedin.com/in/jcmendoza2](www.linkedin.com/in/jcmendoza2) - 2026**
+**Created by Jacqueline Mendoza - [linkedin.com/in/jcmendoza2](https://www.linkedin.com/in/jcmendoza2) - 2026**
