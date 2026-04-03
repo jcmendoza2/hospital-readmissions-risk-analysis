@@ -1,7 +1,5 @@
 <h1>Hospital Readmissions Risk Analysis</h1>
-CMS Hospital Readmissions Reduction Program (HRRP) - July 2021 through Jun 2024
-
-***End-to-End Data Analytics Project***
+***End-to-End Data Analytics Project*** using CMS Hospital Readmissions Reduction Program (HRRP) - July 2021 through Jun 2024
 
 --------------------------------------------------------------------------
 
